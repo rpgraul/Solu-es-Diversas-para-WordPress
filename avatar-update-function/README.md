@@ -22,6 +22,8 @@ Este repositório contém código PHP e JavaScript para permitir que os usuário
 
 - O arquivo JavaScript `avatar-update.js` é usado para aprimorar a experiência do usuário. Certifique-se de que ele esteja enfileirado no seu site WordPress.
 
+- O formulário requer o jQuery para funcionar corretamente. Certifique-se de que o jQuery esteja carregado em seu site antes de usar este formulário. Você pode fazer o download do jQuery diretamente [aqui](https://code.jquery.com/jquery-3.6.0.min.js) ou verificar se ele já está incluído no seu tema ou plugins.
+
 ## Contribuições
 
 Contribuições são bem-vindas. Sinta-se à vontade para abrir issues e enviar pull requests para melhorar esta função.
