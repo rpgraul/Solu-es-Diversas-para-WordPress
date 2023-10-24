@@ -1,5 +1,6 @@
 <?php
 // Função para atualizar avatar no frontend e deletar o avatar antigo
+// Função para atualizar avatar no frontend e deletar o avatar antigo
 if (isset($_POST['submit']) && is_user_logged_in()) {
     $user_id = get_current_user_id();
     $avatar = $_FILES['avatar'];
@@ -21,7 +22,10 @@ if (isset($_POST['submit']) && is_user_logged_in()) {
         if (!is_wp_error($attachment_id)) {
             // Exclui a imagem de perfil antiga do usuário
             $avatar_id_atual = get_user_meta($user_id, 'simple_local_avatar', true);
-            if ($avatar_id_atual) {
+
+            if (is_array($avatar_id_atual)) {
+                // Se for um array, pegue o primeiro valor (o ID do avatar)
+                $avatar_id_atual = reset($avatar_id_atual);
                 wp_delete_attachment($avatar_id_atual, true);
             }
 
